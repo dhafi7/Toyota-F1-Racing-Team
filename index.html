@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>F1 Toyota Racing</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+<!-- AOS Script -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html">
+            <img src="Assets/logo_panasonic_toyota__header_-removebg-preview.png" alt="Toyota Racing" />
+        </a>
+        
+      </div>
+      <ul class="navigation">
+        <li><a href="#">History</a></li>
+        <li><a href="#">Cars</a></li>
+        <li><a href="#">Driver</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="Assets/Toyota-Formula-One-F1-team.jpeg" alt="F1 Background" />
+    <div class="hero-title">
+      <h1>Toyota F1 Legacy</h1>
+      <p>Speed. Innovation. Passion.</p>
+    </div>
+  </section>
+
+  <section class="info-container">
+  <div class="card standings-card">
+    <h3>2025 Driver Standings</h3>
+    <div class="driver">
+      <span class="number">03</span>
+      <div>
+        <strong>Jarno Trulli</strong><br>
+        Toyota Racing Team
+      </div>
+      <span class="points">185</span>
+    </div>
+    <div class="driver">
+      <span class="number">17</span>
+      <div>
+        <strong>Ralf Schumacher</strong><br>
+        Toyota Racing Team
+      </div>
+      <span class="points">10</span>
+    </div>
+  </div>
+
+  <div class="card race-card">
+  <div class="race-overlay">
+    <h3>Hungarian Grand Prix</h3>
+    <p>📅 1 – 3 August 2025</p>
+    <p>
+      <img src="Assets/Flag_of_Hungary.svg.png" alt="Hungary Flag" class="flag-icon">
+      Hungaroring
+    </p>
+    <a href="https://tickets.formula1.com" target="_blank" class="buy-ticket">🎟️ Buy Tickets</a>
+  </div>
+</div>
+
+
+  <div class="card countdown-card">
+    <h3>Live:</h3>
+    <p>Free Practice 2</p>
+    <div class="countdown">
+      <div><span id="days">0</span><br>Days</div>
+      <div><span id="hours">0</span><br>Hours</div>
+      <div><span id="minutes">0</span><br>Mins</div>
+      <div><span id="seconds">0</span><br>Secs</div>
+    </div>
+  </div>
+  <div class="card" data-aos="fade-up" data-aos-duration="1000">
+  <!-- isi -->
+</div>
+<div class="news-ticker">
+  <marquee behavior="scroll" direction="left">
+    🏁 Toyota kembali ke F1? Rumor kembali menguat! | 📢 Pembalap baru akan diumumkan bulan depan!
+  </marquee>
+</div>
+
+<button id="theme-toggle">🌙</button>
+</section>
+
+
+  <script>
+    
+  // Target: contoh 1 jam dari sekarang
+  const countDownDate = new Date(new Date().getTime() + 3600000);
+
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    if (distance < 0) return;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / 1000 / 60) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+  };
+
+  setInterval(updateCountdown, 1000);
+
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  });
+
+
+  </script>
+</body>
+</html>
